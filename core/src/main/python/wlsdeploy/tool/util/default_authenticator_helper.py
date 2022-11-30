@@ -177,7 +177,7 @@ class DefaultAuthenticatorHelper(object):
     def _encode_password(self, user, password):
         pwd_pattern = '[\\!a-zA-Z]{1,}'
         matches = Pattern.matches(pwd_pattern, password)
-        if len(password) < 8 or matches:
+        if len(password) < 8:
             self._logger.warning('WLSDPLY-01902', user)
             return None
         try:
